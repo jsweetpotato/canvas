@@ -9,7 +9,7 @@ canvas.height = innerHeight;
 canvas.width = innerWidth;
 
 let particles = [];
-const colors = ["#fbc2eb", "#a6c1ee", "#8ec5fc", "#ebedee", "#fdfbfb"];
+const colors = ["#D2940", "#005C53", "#9FC131", "#DBF227", "#D6D58E"];
 
 function App() {
   this.init = () => {
@@ -20,7 +20,7 @@ function App() {
 
   this.create = () => {
     particles = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 300; i++) {
       const radius = randomIntFromRange(20, 30);
       let x = randomIntFromRange(radius, canvas.width - radius);
       let y = randomIntFromRange(radius, canvas.height - radius);
