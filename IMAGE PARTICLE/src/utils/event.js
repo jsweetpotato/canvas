@@ -9,7 +9,7 @@ const resize = (init) => {
 };
 
 const mouse = {
-  x: undefined,
+  x: 0,
   y: 0,
 };
 

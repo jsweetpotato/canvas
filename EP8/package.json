@@ -1,0 +1,23 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsweetpotato/cavnas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsweetpotato/cavnas/issues"
+  },
+  "homepage": "https://github.com/jsweetpotato/cavnas#readme",
+  "dependencies": {
+    "@chriscourses/perlin-noise": "^1.0.5"
+  },
+  "type": "module"
+}

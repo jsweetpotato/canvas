@@ -2,6 +2,22 @@ import { randomIntFromRange, randomColor, distance } from "./utils/utils.js";
 import Particle from "./comp/Particle.js";
 import { mouse, resize } from "./utils/event.js";
 
+// audio fetch로 받아오기
+
+// audio tempo설정
+// mousedown시 점점 빠르게 되다가 1에서 멈춤
+// mouseup이 되면 점점 느리게 변경 0.5까지 느려짐
+
+// mousedown시 canvas Particle
+// 회전 속도(velocity)가 점점 빨라짐 (최대값이 되면 빨라지는게 멈춤)
+// radius가 점점 더 커짐 (최대값이 되면 커지는게 멈춤)
+// canvas 덮는 rect의 opacity가 점점 낮아짐 (1 -> 0.1)
+
+// mouseup시 canvas Particle
+// 회전 속도(velocity)가 점점 느려짐 (최소값이 되면 느려지는게 멈춤)
+// radius가 점점 더 작아짐 (최소값이 되면 작아지는게 멈춤)
+// canvas 덮는 rect의 opacity가 다시 원래대로 돌아옴 (0.1 -> 1)
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d", { alpha: false });
 
