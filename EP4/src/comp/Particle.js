@@ -32,7 +32,6 @@ function Particle(x, y, radius, color) {
     for (let i = 0; i < particles.length; i++) {
       if (this === particles[i]) continue;
       if (distance(this.x, this.y, particles[i].x, particles[i].y) - (this.radius + particles[i].radius) < 0) {
-        console.log("collied");
         resolveCollision(this, particles[i]);
       }
     }
@@ -42,7 +41,6 @@ function Particle(x, y, radius, color) {
 
     // mouse collision detection
     if (distance(mouse.x, mouse.y, this.x, this.y) < 160 && this.opacity < 1) {
-      console.log("collision");
       this.opacity += 0.03;
     } else if (this.opacity > 0) {
       this.opacity -= 0.03;

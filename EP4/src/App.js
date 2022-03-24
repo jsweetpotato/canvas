@@ -20,7 +20,7 @@ function App() {
 
   this.create = () => {
     particles = [];
-    for (let i = 0; i < 300; i++) {
+    for (let i = 0; i < 200; i++) {
       const radius = randomIntFromRange(20, 30);
       let x = randomIntFromRange(radius, canvas.width - radius);
       let y = randomIntFromRange(radius, canvas.height - radius);
