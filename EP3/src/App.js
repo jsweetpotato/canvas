@@ -20,18 +20,14 @@ function App() {
     this.Circle2 = new Circle(0, 0, 20, "#f6fa6f");
   };
 
-
   this.animate = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.Circle1.update();
     this.Circle2.x = mouse.x;
     this.Circle2.y = mouse.y;
     this.Circle2.update();
-    if (
-      distance(this.Circle1.x, this.Circle1.y, this.Circle2.x, this.Circle2.y) <
-      this.Circle1.radius + this.Circle2.radius
-    )
-      this.Circle1.color = "cyan";
+    if (distance(this.Circle1.x, this.Circle1.y, this.Circle2.x, this.Circle2.y) < this.Circle1.radius + this.Circle2.radius) this.Circle1.color = "cyan";
+    if (distance(this.Circle1.x, this.Circle1.y, this.Circle2.x, this.Circle2.y) > this.Circle1.radius + this.Circle2.radius) this.Circle1.color = "#6d6a6f";
     requestAnimationFrame(this.animate);
   };
 }

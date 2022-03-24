@@ -3,8 +3,6 @@ import { mouse, resize } from "./utils/event.js";
 
 // const gui = new dot.GUI();
 
-
-
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d", { alpha: false });
 
@@ -14,37 +12,37 @@ canvas.width = innerWidth;
 function App() {
   this.init = () => {
     this.animate();
-    playMusic();
+    // playMusic();
   };
 
   // gui.add(wave, "y", 0, canvas.height / 2);
   // gui.add(wave, "length", -0.01, 0.01);
   // gui.add(wave, "amplitude", -100, 100);
 
-  const loadMusic = fetch("./images/music.mp3").then((audio) => {
-    return new Audio(audio.url);
-  });
+  // const loadMusic = fetch("./images/music.mp3").then((audio) => {
+  //   return new Audio(audio.url);
+  // });
 
-  const playMusic = async () => {
-    const music = await loadMusic;
-    if (typeof music.loop == "boolean") music.loop = true;
+  // const playMusic = async () => {
+  //   const music = await loadMusic;
+  //   if (typeof music.loop == "boolean") music.loop = true;
 
-    canvas.addEventListener("click", () => {
-      console.log("play");
-      console.dir(music);
-      music.volume = 0.2;
-      music.play();
-    });
+  //   canvas.addEventListener("click", () => {
+  //     console.log("play");
+  //     console.dir(music);
+  //     music.volume = 0.2;
+  //     music.play();
+  //   });
 
-    music.addEventListener(
-      "ended",
-      () => {
-        this.currentTime = 0;
-        this.play();
-      },
-      false
-    );
-  };
+  //   music.addEventListener(
+  //     "ended",
+  //     () => {
+  //       this.currentTime = 0;
+  //       this.play();
+  //     },
+  //     false
+  //   );
+  // };
 
   const wave = {
     y: canvas.height / 2,
@@ -68,10 +66,7 @@ function App() {
     ctx.beginPath();
     ctx.moveTo(0, canvas.height / 2);
     for (let i = 0; i < canvas.width; i++) {
-      ctx.lineTo(
-        i,
-        canvas.height / 2 + Math.sin(i * wave.frequency + increament) * wave.amplitude * Math.sin(increament)
-      );
+      ctx.lineTo(i, canvas.height / 2 + Math.sin(i * wave.frequency + increament) * wave.amplitude * Math.sin(increament));
     }
     ctx.strokeStyle = `hsl(${strokeColor.h * Math.sin(increament)}, ${strokeColor.s}%,${strokeColor.l}%)`;
     ctx.stroke();
