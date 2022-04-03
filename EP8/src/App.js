@@ -16,7 +16,7 @@ function App() {
 
   this.circles = [];
   for (let i = 0; i < 100; i++) {
-    this.circles.push(new Circle(canvas.width / 2, canvas.height / 2, 30, "red", i));
+    this.circles.push(new Circle(canvas.width / 2, canvas.height / 2, 30, `hsl(${Math.random() + i + 100}, 100%, 50%)`, i * 0.01));
   }
 
   let time = 0;
