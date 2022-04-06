@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  height: 100vh;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
