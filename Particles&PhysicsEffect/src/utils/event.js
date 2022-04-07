@@ -1,12 +1,5 @@
 import { canvas } from "../App.js";
 
-const resize = (init) => {
-  addEventListener("resize", () => {
-    canvas.height = innerHeight;
-    canvas.width = innerWidth;
-    init();
-  });
-};
 
 const mouse = {
   x: undefined,
@@ -19,4 +12,14 @@ addEventListener("mousemove", ({ clientX, clientY }) => {
   mouse.y = clientY;
 });
 
-export { mouse, resize };
+addEventListener("touchmove", ({ targetTouches }) => {
+  mouse.x = targetTouches[0].pageX;
+  mouse.y = targetTouches[0].pageY;
+});
+
+addEventListener("touchend", () => {
+  mouse.x = undefined;
+  mouse.y = undefined;
+});
+
+export { mouse};

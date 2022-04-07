@@ -9,8 +9,8 @@ const resize = (init) => {
 };
 
 const mouse = {
-  x: undefined,
-  y: undefined,
+  x: innerWidth / 2,
+  y: innerHeight / 2,
 };
 
 addEventListener("mousemove", ({ clientX, clientY }) => {

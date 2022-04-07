@@ -1,13 +1,16 @@
 import { ctx } from "../App.js";
 import { mouse } from "../utils/event.js";
 
-function Particle(x, y) {
+function Particle(x, y, red, green, blue) {
   this.x = x;
   this.y = y;
+  this.red = red;
+  this.green = green;
+  this.blue = blue;
   this.size = 3;
   this.baseX = this.x;
   this.baseY = this.y;
-  this.color = "red";
+  this.color = `rgba(${this.red}, ${this.green}, ${this.blue}, 1)`;
   this.density = Math.random() * 30 + 10;
 
   this.draw = () => {
