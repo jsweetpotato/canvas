@@ -1,6 +1,6 @@
 import { url } from "./images/image.js";
 import Particle from "./comp/Particle.js";
-import { adjust, resize } from "./utils/event.js";
+import { adjust, resize, distance } from "./utils/event.js";
 
 const myImg = new Image();
 myImg.src = url;
@@ -21,7 +21,6 @@ myImg.addEventListener("load", () => {
       resize(this.create);
     };
 
-
     ctx.drawImage(myImg, 0, 0, size, size);
     const pixels = ctx.getImageData(0, 0, size, size);
     ctx.clearRect(0, 0, size, size);
@@ -37,8 +36,8 @@ myImg.addEventListener("load", () => {
             const red = pixels.data[y * 4 * pixels.width + x * 4];
             const green = pixels.data[y * 4 * pixels.width + x * 4 + 1];
             const blue = pixels.data[y * 4 * pixels.width + x * 4 + 2];
-            const posY = y * 5 + adjust.y;
-            const posX = x * 5 + adjust.x;
+            const posY = y * distance + adjust.y;
+            const posX = x * distance + adjust.x;
             particleArray.push(new Particle(posX, posY, red, green, blue));
           }
         }

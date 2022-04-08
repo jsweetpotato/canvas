@@ -10,7 +10,7 @@ function Particle(x, y, red, green, blue) {
   this.size = 3;
   this.baseX = this.x;
   this.baseY = this.y;
-  this.color = `rgba(${this.red}, ${this.green}, ${this.blue}, 1)`;
+  this.color = `rgba(${this.red}, ${this.green}, ${this.blue},1)`;
   this.density = Math.random() * 30 + 10;
 
   this.draw = () => {

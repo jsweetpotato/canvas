@@ -1,16 +1,21 @@
-import { canvas, size } from "../App.js";
+import { canvas } from "../App.js";
+
+const size = 100;
+let distance = 5;
+innerWidth < 500 ? (distance = 3) : (distance = 5);
 
 const adjust = {
-  x: innerWidth / 2 - 600 / 2,
-  y: innerHeight / 2 - 600 / 2,
+  x: innerWidth / 2 - (100 * distance) / 2,
+  y: innerHeight / 2 - (100 * distance) / 2,
 };
 
 const resize = (init) => {
   addEventListener("resize", () => {
+    innerWidth < 500 ? (distance = 3) : (distance = 5);
     canvas.height = innerHeight;
     canvas.width = innerWidth;
-    adjust.x = innerWidth / 2 - (size * 5) / 2;
-    adjust.y = innerHeight / 2 - (size * 5) / 2;
+    adjust.x = innerWidth / 2 - (size * distance) / 2;
+    adjust.y = innerHeight / 2 - (size * distance) / 2;
     mouse.radius = 30 + innerWidth / 20;
     init();
   });
@@ -37,4 +42,4 @@ addEventListener("touchend", () => {
   mouse.y = undefined;
 });
 
-export { mouse, adjust, resize };
+export { mouse, adjust, distance, size, resize };
