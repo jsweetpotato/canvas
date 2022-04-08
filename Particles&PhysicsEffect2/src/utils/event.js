@@ -1,9 +1,8 @@
 import { canvas } from "../App.js";
 
-// Configure data
+// configure data
 const size = 100;
 let distance = 5;
-
 innerWidth < 500 ? (distance = 3) : (distance = 5);
 
 const adjust = {
