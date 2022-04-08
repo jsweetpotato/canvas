@@ -30,10 +30,10 @@ myImg.addEventListener("load", () => {
       const x2 = pixels.width;
       for (let y = 0; y < y2; y++) {
         for (let x = 0; x < x2; x++) {
-          if (pixels.data[y * 4 * pixels.width + x * 4 + 3] > 128) {
-            const red = pixels.data[y * 4 * pixels.width + x * 4];
-            const green = pixels.data[y * 4 * pixels.width + x * 4 + 1];
-            const blue = pixels.data[y * 4 * pixels.width + x * 4 + 2];
+          if (pixels.data[y * 4 * x2 + x * 4 + 3] > 128) {
+            const red = pixels.data[y * 4 * x2 + x * 4];
+            const green = pixels.data[y * 4 * x2 + x * 4 + 1];
+            const blue = pixels.data[y * 4 * x2 + x * 4 + 2];
             const posY = y * distance + adjust.y;
             const posX = x * distance + adjust.x;
             particleArray.push(new Particle(posX, posY, red, green, blue));
