@@ -1,6 +1,6 @@
 import { url } from "./images/image.js";
 import Particle from "./comp/Particle.js";
-import { adjust, resize, distance } from "./utils/event.js";
+import { adjust, resize, distance, size } from "./utils/event.js";
 
 const myImg = new Image();
 myImg.src = url;
@@ -10,8 +10,6 @@ const ctx = canvas.getContext("2d");
 
 canvas.height = innerHeight;
 canvas.width = innerWidth;
-
-const size = 100;
 
 myImg.addEventListener("load", () => {
   function App() {

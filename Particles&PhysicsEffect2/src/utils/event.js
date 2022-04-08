@@ -1,7 +1,9 @@
 import { canvas } from "../App.js";
 
+// Configure data
 const size = 100;
 let distance = 5;
+
 innerWidth < 500 ? (distance = 3) : (distance = 5);
 
 const adjust = {
@@ -9,6 +11,13 @@ const adjust = {
   y: innerHeight / 2 - (100 * distance) / 2,
 };
 
+const mouse = {
+  x: undefined,
+  y: undefined,
+  radius: 30 + innerWidth / 20,
+};
+
+// Event handler
 const resize = (init) => {
   addEventListener("resize", () => {
     innerWidth < 500 ? (distance = 3) : (distance = 5);
@@ -19,12 +28,6 @@ const resize = (init) => {
     mouse.radius = 30 + innerWidth / 20;
     init();
   });
-};
-
-const mouse = {
-  x: undefined,
-  y: undefined,
-  radius: 30 + innerWidth / 20,
 };
 
 addEventListener("mousemove", ({ clientX, clientY }) => {
